@@ -35,11 +35,14 @@ class Variable:
         self.name = name
 
 class Assignment:
-    def __init__(self, lhs, rhs=None):
+    def __init__(self, lhs, rhs):
         self.lhs = lhs
+        self.rhs = rhs
 
-class Statement:
-    pass
+class Expression:
+    def __init__(self, expr):
+        self.expression = expr
 
 class Return:
-    pass
+    def __init__(self, var):
+        self.var = var
