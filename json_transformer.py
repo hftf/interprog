@@ -15,6 +15,9 @@ def read_function(function):
         [read_param(i) for i in function['params']]
     )
 
+def read_param(param):
+    return param
+
 def read_block(block):
     return Block(
         read_scope(block['scope']),
@@ -57,9 +60,12 @@ def write_program(program):
 def write_function(function):
     return {
         'type': 'function',
-        'block': function.block,
-        'params': function.params
+        'block': write_block(function.block),
+        'params': [write_param(i) for i in function.params]
     }
+
+def write_param(param):
+    return param
 
 def write_block(block):
     return {
@@ -80,6 +86,13 @@ def write_variable(variable):
         'name': variable.name
     }
 
+def write_instruction(instruction):
+    return {
+        'Assignment': write_assignment,
+        'Expression': write_expression,
+        'Return': write_return
+    }[instruction.__class__.__name__](instruction)
+
 def write_assignment(assignment):
     return {
         'type': 'assignment',
@@ -90,7 +103,7 @@ def write_assignment(assignment):
 def write_expression(expression):
     return {
         'type': 'expression',
-        'expression': expression.expr
+        'expression': expression.expression
     }
 
 def write_return(return_):
