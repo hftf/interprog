@@ -45,3 +45,21 @@ class Expression:
 class Return:
     def __init__(self, var):
         self.var = var
+
+class If:
+    def __init__(self, name, expr, block):
+        self.name = name # name is if, elseif, or else
+        self.expression = expr # None if name is else
+        self.block = block 
+
+class While:
+    def __init__(self, expr, block):
+        self.expression = expr
+        self.block = block
+
+class For:
+    def __init__(self, expr, block):
+        self.expression = expr
+        self.block = block
+
+
