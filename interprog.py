@@ -4,8 +4,6 @@
 Entry point for InTERProg
 """
 
-import nexus
-
 import argparse
 import imp
 import sys
@@ -25,12 +23,13 @@ for l in LANGUAGE_NAMES:
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('source', type=str, nargs=1,
+    parser.add_argument('source', type=str,
                         help='source language')
-    parser.add_argument('target', type=str, nargs=1,
+    parser.add_argument('target', type=str,
                         help='target language')
     args = parser.parse_args()
 
-    src = sys.stdin.read()
-    tgt = src
-    sys.stdout.write(tgt)
+    sys.stdout.write(LANGUAGES[args.target][1](
+        LANGUAGES[args.source][0](sys.stdin.read),
+        'stdin'
+        ))

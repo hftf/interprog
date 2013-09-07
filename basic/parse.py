@@ -1,2 +1,2 @@
-def parse():
-    pass
+def parse(content):
+    return None
