@@ -1,7 +1,7 @@
 class Program:
     def __init__(self, functions=None, global_scope=None, main_func=None):
         if functions is None:
-            self.functions = []
+            self.functions = {}
         else:
             self.functions = functions
         if global_scope is None:
