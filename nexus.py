@@ -20,12 +20,13 @@ class Block:
             self.instructions = []
 
 class Scope:
-    def __init__(self):
-        pass
+    def __init__(self, variables=None):
+        if variables is None:
+            variables = {}
 
 class Variable:
-    def __init__(self):
-        pass
+    def __init__(self, name):
+        self.name = name
 
 class Instruction:
     def __init__(self):
