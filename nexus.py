@@ -14,10 +14,13 @@ class Program:
             self.main_func = main_func
 
 class Function:
-    def __init__(self, block=None):
+    def __init__(self, block=None, params=None):
         if block is None:
             block = Block()
+        if params is None:
+            params=[]
         self.block = block
+        self.params = params
 
 class Block:
     def __init__(self, scope, instructions):
