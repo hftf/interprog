@@ -1,0 +1,29 @@
+{
+	"type": "program",
+	"functions": [
+	],
+	"global_scope": {
+		"type": "scope",
+		"variables": [
+		]
+	},
+	"main_func": {
+		"type": "function",
+		"block": {
+			"type": "block",
+			"scope": {
+				"type": "scope",
+				"variables": [
+				]
+			},
+			"instructions": [
+				{
+					"type": "expression",
+					"expression": "print \"Hello world!\""
+				}
+			]
+		},
+		"params": [
+		]
+	}
+}
