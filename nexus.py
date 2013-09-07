@@ -1,17 +1,32 @@
 class Program:
-    pass
+    def __init__(self, functions=None, global_scope=None, main_func=None):
+        if functions is None:
+            self.functions = []
+        if global_scope is None:
+            self.global_scope = Scope()
+        if main_func is None:
+            self.main_func = Function()
 
 class Function:
-    pass
+    def __init__(self, block=None):
+        if block is None:
+            self.block = Block()
 
 class Block:
-    pass
+    def __init__(self, scope=None, instructions=None):
+        if scope is None:
+            self.scope = Scope()
+        if instructions is None:
+            self.instructions = []
 
 class Scope:
-    pass
+    def __init__(self):
+        pass
 
 class Variable:
-    pass
+    def __init__(self):
+        pass
 
 class Instruction:
-    pass
+    def __init__(self):
+        pass
