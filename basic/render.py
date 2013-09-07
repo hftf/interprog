@@ -1,6 +1,6 @@
 from nexus import *
 
-def from_nexus(program, filename):
+def render(program, filename):
 
 	functions = program.functions
 	global_scope = program.global_scope
