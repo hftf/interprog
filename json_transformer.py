@@ -12,7 +12,8 @@ def write_program(program):
 def write_function(function):
     return {
         'type': 'function',
-        'block': function.block
+        'block': function.block,
+        'params': function.params
     }
 
 def write_block(block):

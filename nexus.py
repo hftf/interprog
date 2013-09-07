@@ -18,7 +18,7 @@ class Function:
         if block is None:
             block = Block()
         if params is None:
-            params=[]
+            params = []
         self.block = block
         self.params = params
 
